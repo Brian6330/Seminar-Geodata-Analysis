@@ -11,12 +11,12 @@ Can you guess what number between 0 and 100 I'm thinking of?
 Please enter your guess: ''')
 
 
-while int(guessed_number) != random_number:
-    if int(guessed_number) < random_number:
-        guessed_number = input('''
-        Your number was smaller than mine!
-        Please try again: ''')
-    elif int(guessed_number) > random_number:
-        guessed_number = input('''
-        Your number was larger than mine!
-        Please try again: ''')
+while True:
+    guess = int(input("Enter guess (between 0 and 100): "))
+    if guess < random_number:
+        print("Try higher.")
+    elif guess > random_number:
+        print("Try lower.")
+    elif guess == random_number:
+        print("You found it!")
+        break
